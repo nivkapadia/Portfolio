@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    URL Shortener
+{% endblock %}
+
+
+{% block main %}
+<h1>URL Shortener</h1>
+
+{% for message in get_flashed_messages() %}
+    <h2>{{ message }}</h2>
+{% endfor %}
+
+<table>
+    <form action="/your-url" method="post">
+        <tr>
+            <td><label for="url">Enter your URL:</label></td>
+            <td><input type="url" name="url" placeholder="Enter your url" autofocus autocomplete="off" required></td>
+        </tr>
+        <tr>
+            <td><label for="Short">Short:</label></td>
+            <td><input type="text" name="Short" placeholder="Enter your text" autocomplete="off" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Shorten"></td>
+        </tr>
+    </form>
+
+    <form action="/your-url" method="post" enctype="multipart/form-data">
+        <tr>
+            <td><label for="File">File</label></td>
+            <td><input type="file" name="File" required></td>
+        </tr>
+        <tr>
+            <td><label for="Short">Short:</label></td>
+            <td><input type="text" name="Short" placeholder="Enter your text" autocomplete="off" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Shorten"></td>
+        </tr>
+    </form>
+</table>
+
+<h2>Codes you've created</h2>
+<ul>
+    {% for code in codes: %}
+        <li><a href="{{ url_for('redirectURL', code=code) }}">{{ code }}</a></li>
+    {% endfor%}
+</ul>
+
+{% endblock %}

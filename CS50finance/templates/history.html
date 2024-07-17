@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h2>Transaction History</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Symbol</th>
+                <th>Traded Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hist in history %}
+                <tr>
+                    <td>{{ hist.transaction_id }}</td>
+                    <td>{{ hist.symbol }}</td>
+                    <td>{{ hist.buy_price | usd }}</td>
+                    <td>{{ hist.quantity }}</td>
+                    <td>{{ hist.action }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <h2>Portfolio</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Avg Price</th>
+                <th>Current Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for script in scripts %}
+                <tr>
+                    <td>{{ script.symbol }}</td>
+                    <td>{{ script.quantity }}</td>
+                    <td>{{ script.avg_price | usd }}</td>
+                    <td></td>
+                    <td>{{ script.buy_value | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td colspan="4">TOTAL VALUE</td>
+                <td>{{ total_value | usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

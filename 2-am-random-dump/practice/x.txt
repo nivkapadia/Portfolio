@@ -1,0 +1,10 @@
+        {
+            if(i + j < n - 1 || i + j == n || i + j > n + 1)
+            {
+                printf(".");
+            }
+            else if (i + j == n - 1 || i + j == n + 1)
+            {
+                printf("#");
+            }
+        }

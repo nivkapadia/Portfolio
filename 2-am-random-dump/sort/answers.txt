@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Bubble sort, in best case scenerio has Ω(n). So by comparision with other two types of sort, we know that bubble sort is neither as fast as merge sort nor as slow as selection sort. While I was testing the time it took for each type of sorting algorithms to sort the data, sort1 always ended up taking time that was somewhere in between the time taken by sort2 and sort3. Hence, we know, that sort1 is bubble sort.
+
+sort2 uses: Merge Sort
+
+How do you know?: Of the three options, merge sort is considered the most optimum since it follows Ω(n log n), which means that merge sort takes the least time to sort the data in best case scenerio. The time taken by sort2 to sort sorted10000.txt was 0.072s which is the least time taken when compared to other two options given.
+
+sort3 uses: Selection sort
+
+How do you know?: Since sort3 takes the longest amount of time to sort the data even in the best case scenerio, it can be said that sort3 is selection sort. Also, selection sort in the best case scenerio has Ω(n^2) which makes selection sort suboptimal and hence ends up taking more time. Sort3 ended up taking the most time to sort already sorted data and hence we are able to identify sort3 as selection sort.

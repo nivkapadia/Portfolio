@@ -1,0 +1,13 @@
+American Express - 15 digits
+all American express cards starts with 34 or 37
+
+Master card - 16 digits
+most MasterCard numbers start with 51, 52, 53, 54, or 55
+
+Visa - 13 and 16 digits
+all Visa numbers start with 4
+
+Steps (Pseudocode):
+
+Step 1:
+The number should atleast have
